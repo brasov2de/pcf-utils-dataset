@@ -1,0 +1,27 @@
+
+
+.Dianamics\.PCFutils .wrapper{
+    cursor: pointer;    
+    display: flex;   
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Dianamics\.PCFutils .card{
+    border:1px solid black;
+    height: 400px;
+    margin: 10px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.Dianamics\.PCFutils .card:hover{
+    box-shadow: 3px 3px 2px gray;
+    opacity: 0.9;
+    transform: scale(1.02);            
+}
+
+.Dianamics\.PCFutils .card img{    
+    height: 300px;    
+    margin: 5px;
+}

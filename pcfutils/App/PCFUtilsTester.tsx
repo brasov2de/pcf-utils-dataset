@@ -2,6 +2,7 @@ import * as React from 'react';
 import {useResourceImage} from  '@dianamics/pcf-utils';
 import {useEnvironmentVariable} from "@dianamics/pcf-utils";
 import { EnvironmentVariableTypes } from '@dianamics/pcf-utils';
+import { Card } from './Card';
 
 type DataSet = ComponentFramework.PropertyTypes.DataSet;
 export interface IPCFTesterProps{
@@ -12,33 +13,55 @@ export interface IPCFTesterProps{
 
 export const PCFUtilsTester = ({webAPI, dataset, resources} : IPCFTesterProps)  : JSX.Element => {
     console.log("entered PCFUtilsTester");    
-      
-    const s1 = useResourceImage(resources, "images/skating/s1.png", "png");
-    const images = ["3","4", "5", "9"].map((n)=>{
-        return useResourceImage(resources, `images/skating/s${n}.png`, "png")
-    })
-    const mySVG = useResourceImage(resources, "images/My.svg", "svg");  
-    const chosenImageName = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String);    
-    console.log(`ChoseImgeName - envvar: ${chosenImageName}`);
-    
-    const { src, isLoading, errorMessage } = useResourceImage(resources, chosenImageName ?? "", "png");
-    
-   const isOverallLoading= s1.isLoading || images.some((image)=> image.isLoading===true);
-    console.log(`isOverallLoading: ${isOverallLoading}`);
-    console.log(images);
-    return isOverallLoading===true
-    ? (<div style={{width:"100%", height: "100%", backgroundColor:'yellow'}}>Loading....</div>)
-    : (<div>  
-        Chosen:     
-        <img src={src}/>       
-        <img src={mySVG.src}/>       
+    const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
+    //const s1 = useResourceImage(resources, "images/skating/s1.png", "png");
 
-        <hr/>
-        Available: <br/>      
-        <img src={s1.src}/>
-        {images.map((img)=> (<img src={img.src}/>))}       
+    const images = ["3","4", "5", "9", "1", "2", "7", "8", "10"].map((n)=>{
+        return useResourceImage(resources, `images/skating/s${n}.png`, "png")
+    });
+
+    const mySVG = useResourceImage(resources, "images/My.svg", "svg");  
+
+    const envVar = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String, true);        
+    //console.log(`ChoseImgeName - envvar: ${envVar.value}`);
+    
+    /*const { src, isLoading, errorMessage } = useResourceImage(resources,  envVar.value ?? "", "png");
+    if(errorMessage){
+        console.error(`could not load environment variable: ${errorMessage}`);
+    }
+    */
+    //const isOverallLoading= envVar.isLoading || images.some((image)=> image.isLoading===true);
+
+    //console.log(`isOverallLoading: ${isOverallLoading}`);
+    //console.log(images);
+console.log(dataset.sortedRecordIds.length);
+
+    const selectIt = React.useCallback((id : string | null ) => {        
+        if(id==null){
+            dataset.clearSelectedRecordIds();
+            setSelectedIds([]);
+        }
+        else{
+            dataset.setSelectedRecordIds([id]);
+            setSelectedIds([id]);
+        }
+    }, [])
+
+    return (<div>              
+        <img src={mySVG.src}/> {envVar.value}
+        <div className="wrapper">
+        {dataset.sortedRecordIds.map((id, i)=>{
+            return <Card key={id}  id={id} imageSrc={images[i % images.length].src} onClick={selectIt} isSelected={selectedIds.includes(id)} title={dataset.records[id].getFormattedValue("orb_name")} />
+        })}           
+        </div>
                        
     </div>)
 }
 
 
+
+
+/* {images.map((img)=> (<div className="card"><img src={img.src}/></div>))}      
+
+ ? (<div style={{width:"100%", height: "100%", fontSize:"300%"}}>Loading....</div>)
+ */
