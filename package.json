@@ -9,7 +9,6 @@
     "start": "pcf-scripts start"
   },
   "dependencies": {
-    "@dianamics/pcf-utils": "0.0.16",
     "@types/node": "^10.12.18",
     "@types/powerapps-component-framework": "^1.2.0",
     "@types/react": "^17.0.5",
@@ -22,14 +21,10 @@
     "@typescript-eslint/parser": "^4.20.0",
     "eslint": "^7.23.0",
     "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "pcf-scripts": "^1",
     "pcf-start": "^1"
-  },
-  "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
   }
 }
