@@ -25,3 +25,9 @@
     height: 300px;    
     margin: 5px;
 }
+
+.Dianamics\.PCFutils button
+{
+    background-color: transparent;
+    border-style: solid;
+}

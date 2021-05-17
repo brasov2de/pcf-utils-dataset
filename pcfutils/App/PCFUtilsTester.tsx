@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {useResourceImage} from  '@dianamics/pcf-utils';
-import {useEnvironmentVariable} from "@dianamics/pcf-utils";
+import {useEnvironmentVariable, useResourceImage, usePaging} from "@dianamics/pcf-utils";
 import { EnvironmentVariableTypes } from '@dianamics/pcf-utils';
 import { Card } from './Card';
 
@@ -22,7 +21,9 @@ export const PCFUtilsTester = ({webAPI, dataset, resources} : IPCFTesterProps)  
 
     const mySVG = useResourceImage(resources, "images/My.svg", "svg");  
 
-    const envVar = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String, true);        
+    const envVar = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String, true);       
+    const { currentPage, moveNext, movePrevious} = usePaging(dataset);
+    
     //console.log(`ChoseImgeName - envvar: ${envVar.value}`);
     
     /*const { src, isLoading, errorMessage } = useResourceImage(resources,  envVar.value ?? "", "png");
@@ -46,15 +47,19 @@ console.log(dataset.sortedRecordIds.length);
             setSelectedIds([id]);
         }
     }, [])
-
+    if(dataset.loading){
+        return <div>Loading...</div>
+    }
     return (<div>              
-        <img src={mySVG.src}/> {envVar.value}
+        <img src={mySVG.src}/> {envVar.value}   <hr/>
+        <button onClick={movePrevious}>Prev</button>
+        Page:{currentPage}           
+        <button onClick={moveNext}>Next</button> 
         <div className="wrapper">
         {dataset.sortedRecordIds.map((id, i)=>{
             return <Card key={id}  id={id} imageSrc={images[i % images.length].src} onClick={selectIt} isSelected={selectedIds.includes(id)} title={dataset.records[id].getFormattedValue("orb_name")} />
         })}           
-        </div>
-                       
+        </div>                
     </div>)
 }
 

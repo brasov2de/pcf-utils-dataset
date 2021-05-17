@@ -9,7 +9,7 @@
     "start": "pcf-scripts start"
   },
   "dependencies": {
-    "@dianamics/pcf-utils": "0.0.28",
+    "@dianamics/pcf-utils": "0.0.29",
     "@types/node": "^10.12.18",
     "@types/powerapps-component-framework": "^1.2.0",
     "@types/react": "^17.0.5",
