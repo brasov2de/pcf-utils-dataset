@@ -11,28 +11,33 @@ export interface IPCFTesterProps{
 }
 
 export const PCFUtilsTester = ({webAPI, dataset, resources} : IPCFTesterProps)  : JSX.Element => {
-    console.log("entered PCFUtilsTester");
+    console.log("entered PCFUtilsTester");    
       
-    const img1 = useResourceImage(resources, "images/twooptionscomposite/Main.png", "png"); 
-   // const imgSrc2 = useResourceImage(resources, "images/twooptionscomposite/EditMode.png", "png");
-   // const imgSrc3 = useResourceImage(resources, "images/colorfuloptionsetgrid/colorful-optionset-grid.png", "png");
+    const s1 = useResourceImage(resources, "images/skating/s1.png", "png");
+    const images = ["3","4", "5", "9"].map((n)=>{
+        return useResourceImage(resources, `images/skating/s${n}.png`, "png")
+    })
+    const mySVG = useResourceImage(resources, "images/My.svg", "svg");  
     const chosenImageName = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String);    
     console.log(`ChoseImgeName - envvar: ${chosenImageName}`);
+    
     const { src, isLoading, errorMessage } = useResourceImage(resources, chosenImageName ?? "", "png");
     
-   // console.log(`image: ${chosenImageName}`);
-     
-    return (isLoading===true || chosenImageName==null || chosenImageName=="undefined")
+   const isOverallLoading= s1.isLoading || images.some((image)=> image.isLoading===true);
+    console.log(`isOverallLoading: ${isOverallLoading}`);
+    console.log(images);
+    return isOverallLoading===true
     ? (<div style={{width:"100%", height: "100%", backgroundColor:'yellow'}}>Loading....</div>)
     : (<div>  
         Chosen:     
-        <img src={src}/>
-       
+        <img src={src}/>       
+        <img src={mySVG.src}/>       
+
         <hr/>
         Available: <br/>      
-        <img src={img1.src}/>
-       
-        
+        <img src={s1.src}/>
+        {images.map((img)=> (<img src={img.src}/>))}       
+                       
     </div>)
 }
 

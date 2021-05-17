@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="32" width="32" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <title id="title2996">Taijitu</title>
+ <defs id="defs4">
+  <linearGradient id="linearGradient3034" x1="160.71" gradientUnits="userSpaceOnUse" y1="511.15" gradientTransform="matrix(0.05344525,0,0,-0.05344525,28.396638,293.64134)" x2="549.1" y2="511.15">
+   <stop id="stop3855" stop-color="#000" offset="0"/>
+   <stop id="stop3861" stop-color="#000" stop-opacity="0.89411765" offset="1"/>
+   <stop id="stop3857" stop-color="#000" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Taijitu</dc:title>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>en.Wikipedia.org/wiki/User:Who R you?</dc:title>
+     </cc:Agent>
+    </dc:creator>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer4" transform="translate(-27.77449,-250.04089)">
+  <g id="g3809" stroke-miterlimit="4">
+   <path id="path2985" d="m558.11,511.9a250.3,250.3,0,1,1,-500.6,0,250.3,250.3,0,1,1,500.6,0z" fill-opacity="0" transform="matrix(0.05548372,0,0,-0.05551681,26.809138,294.67712)" stroke="#000" stroke-dasharray="none" stroke-width="18.01793289"/>
+   <path id="path3769" d="M411.58,752.35a130,130,0,1,1,-0.98,-259.99" fill-opacity="0" transform="matrix(0.05344525,0,0,-0.05344525,21.983207,306.4682)" stroke="#000" stroke-dasharray="none" stroke-width="1"/>
+   <path id="path3771" d="m411.29,492.37a130,130,0,0,1,-0.42052,259.99" fill-opacity="0" transform="matrix(0.05344525,0,0,-0.05344525,21.983208,292.57244)" stroke="#000" stroke-dasharray="none" stroke-width="1"/>
+   <path id="path3779" d="m310,382.36a20,20,0,1,1,-40,0,20,20,0,1,1,40,0z" fill-opacity="0" transform="matrix(0.07089523,0,0,-0.07089523,23.338044,286.42044)" stroke="#000" stroke-dasharray="none" stroke-width="1"/>
+   <path id="path3823" stroke-width="0" fill="url(#linearGradient3034)" d="m46.234,252.76c1.515,0.57392,2.6417,1.4136,3.4909,2.6808,0.80592,1.2025,1.1993,2.6241,1.1418,4.1258-0.0718,1.8738-0.71999,3.322-2.0458,4.6561-0.82087,0.826-1.6135,1.3039-2.6325,1.6497-0.70836,0.24037-1.1741,0.33458-2.1582,0.37988-1.0517,0.0484-1.6937,0.16055-2.3074,0.36614-3.0131,1.0095-5.0312,4.0554-4.738,7.1646,0.12,1.2725,0.46876,2.289,1.173,3.3417,0.95674,1.4302,2.5476,2.496,4.291,2.882,0.54204,0.12001,1.8839,0.14166,2.7168,0.065,4.782-0.44018,9.0499-3.375,11.187-7.705,2.4226-4.9092,1.7255-10.749-1.7794-14.993-1.3087-1.5847-3.2686-3.0939-5.373-3.9387-1.1071-0.44444-2.1368-0.81194-3.4333-0.92362-0.9747-0.0839-0.95321-0.12279-0.16157,0.0226zm-0.84412,19.02c0.44412,0.44403,0.78928,1.5221,0.28549,2.448-0.51538,0.94717-1.518,1.1953-2.2459,1.0363-0.75285-0.16441-1.1538-0.72369-1.4234-1.3426-0.32188-0.73874-0.08866-1.4332,0.23067-1.8948,0.28671-0.4144,0.64616-0.80408,1.4978-0.92615,0.51309-0.0735,1.2426,0.26644,1.6555,0.67921z"/>
+   <g id="g3016" stroke-width="14.10532093" stroke-dasharray="none" transform="matrix(0.07089523,0,0,0.07089523,23.338044,232.20512)">
+    <path id="path3825" stroke-linejoin="miter" d="m284.45,360.15c-9.9002,3.0608-17.089,12.759-17.098,22.664-0.0132,15.669,18.489,26.631,32.804,19.702,15.52-7.5132,16.672-31.77,1.379-39.641-4.0046-2.0612-13.349-3.8796-17.085-2.7246z" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="14.10532093" fill="#000"/>
+   </g>
+   <path id="path3777" d="m310,382.36a20,20,0,1,1,-40,0,20,20,0,1,1,40,0z" fill-opacity="0" transform="matrix(0.07657167,0,0,-0.08053058,21.689976,303.99775)" stroke="#FFF" stroke-dasharray="none" stroke-width="12.73460674"/>
+  </g>
+ </g>
+</svg>

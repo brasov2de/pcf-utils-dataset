@@ -10,9 +10,17 @@
     </data-set>
     <resources>
       <code path="index.ts" order="1"/>
-      <img path="images/colorfuloptionsetgrid/colorful-optionset-grid.png"/>
-      <img path="images/twooptionscomposite/Main.png"/>
-      <img path="images/twooptionscomposite/EditMode.png"/>
+      <img path="images/skating/s1.png"/> 
+      <img path="images/skating/s2.png"/> 
+      <img path="images/skating/s3.png"/> 
+      <img path="images/skating/s4.png"/> 
+      <img path="images/skating/s5.png"/> 
+      <img path="images/skating/s6.png"/> 
+      <img path="images/skating/s7.png"/> 
+      <img path="images/skating/s8.png"/> 
+      <img path="images/skating/s9.png"/> 
+      <img path="images/skating/s10.png"/> 
+      <img path="images/My.svg"/> 
       <!-- UNCOMMENT TO ADD MORE RESOURCES
       <css path="css/pcfutils.css" order="1" />
       <resx path="strings/pcfutils.1033.resx" version="1.0.0" />

@@ -22,7 +22,7 @@ export class PCFutils implements ComponentFramework.StandardControl<IInputs, IOu
 			webAPI: context.webAPI,
 			dataset : context.parameters.sampleDataSet,
 			resources : context.resources
-		};
+		};		
 		ReactDOM.render(React.createElement(PCFUtilsTester, props ), this.container);
 	}
 
