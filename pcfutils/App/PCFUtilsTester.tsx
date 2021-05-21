@@ -19,7 +19,7 @@ const imageNames = ["3","4", "5", "9", "1", "2", "7", "8", "10"].map((n)=> `imag
 
 export const PCFUtilsTester = React.memo(({webAPI, dataset, resources} : IPCFTesterProps)  : JSX.Element => {
     console.log("entered PCFUtilsTester");    
-    const envVar = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String, true);  
+    const envVar = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String);  
     const mySVG = useResourceImage(resources, "images/My.svg", "svg");  
     const images = useResourceImages(resources, imageNames, "png");
   
