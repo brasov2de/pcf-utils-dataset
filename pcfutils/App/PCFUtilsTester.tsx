@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useEnvironmentVariable, useResourceImage, usePaging} from "@dianamics/pcf-utils";
+import {useEnvironmentVariable, useResourceImage, usePaging, useResourceImages} from "@dianamics/pcf-utils";
 import { EnvironmentVariableTypes } from '@dianamics/pcf-utils';
 import { Card } from './Card';
 
@@ -10,18 +10,23 @@ export interface IPCFTesterProps{
     resources: any;
 }
 
+const imageNames = ["3","4", "5", "9", "1", "2", "7", "8", "10"].map((n)=> `images/skating/s${n}.png`);
+
+ /*    const images = ["3","4", "5", "9", "1", "2", "7", "8", "10"].map((n)=>{
+        return useResourceImage(resources, `images/skating/s${n}.png`, "png")
+    });*/
+
+
 export const PCFUtilsTester = React.memo(({webAPI, dataset, resources} : IPCFTesterProps)  : JSX.Element => {
     console.log("entered PCFUtilsTester");    
-    const envVar = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String, true);       
-
+    const envVar = useEnvironmentVariable<string>(webAPI, "orb_chosedImage", EnvironmentVariableTypes.String, true);  
     const mySVG = useResourceImage(resources, "images/My.svg", "svg");  
-    const images = ["3","4", "5", "9", "1", "2", "7", "8", "10"].map((n)=>{
-        return useResourceImage(resources, `images/skating/s${n}.png`, "png")
-    });
+    const images = useResourceImages(resources, imageNames, "png");
+  
         
     const { currentPage, moveNext, movePrevious} = usePaging(dataset);
       
-    const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
+    const [selectedIds, setSelectedIds] = React.useState<string[]>(dataset.getSelectedRecordIds());
     
     const selectIt = React.useCallback((id : string | null ) => {        
         if(id==null){
@@ -35,6 +40,7 @@ export const PCFUtilsTester = React.memo(({webAPI, dataset, resources} : IPCFTes
     }, []);
 
     if(dataset.loading){
+        console.log("loading");
         return <div>Loading...</div>
     }
     return (<div>              
@@ -45,7 +51,7 @@ export const PCFUtilsTester = React.memo(({webAPI, dataset, resources} : IPCFTes
 
         <div className="wrapper">
         {dataset.sortedRecordIds.map((id, i)=>{
-            return <Card key={id}  id={id} imageSrc={images[i % images.length].src} onClick={selectIt} isSelected={selectedIds.includes(id)} title={dataset.records[id].getFormattedValue("orb_name")} />
+            return <Card key={id}  id={id} imageSrc={images[i % images.length]} onClick={selectIt} isSelected={selectedIds.includes(id)} title={dataset.records[id].getFormattedValue("orb_name")} />
         })}           
         </div>                
     </div>)

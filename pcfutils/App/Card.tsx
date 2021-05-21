@@ -9,6 +9,7 @@ export interface ICardprops{
     isSelected: boolean;
 }
 export const Card = React.memo(({title, imageSrc, id, onClick, isSelected} : ICardprops)  : JSX.Element => {
+
     const selectIt= React.useCallback(()=>{        
         onClick(isSelected ? null : id);
     }, [id, isSelected]);
