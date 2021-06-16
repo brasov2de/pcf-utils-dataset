@@ -3,11 +3,10 @@
   <control namespace="Dianamics" constructor="PCFutils" version="0.0.1" display-name-key="PCFutils" description-key="A PCF to test the @dianamics/pcf-utils" control-type="standard">
     <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
     <data-set name="sampleDataSet" display-name-key="Dataset_Display_Key" cds-data-set-options="displayCommandBar:true;displayViewSelector:true;displayquickfind:true">
-      <!-- 'property-set' node represents a unique, configurable property that each record in the dataset must provide. -->
-      <!-- UNCOMMENT TO ADD PROPERTY-SET NODE
-      <property-set name="samplePropertySet" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
-      -->
+      <property-set name="parentLookup" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="Lookup.Simple" usage="bound" required="true" />      
     </data-set>
+    <property name="iconConfig" display-name-key="iconConfig" description-key="iconConfig" of-type="Lookup.Simple" usage="input" required="false" />
+    <!--property name="lookupConfig" display-name-key="Lookup Config" description-key="Property_Desc_Key" of-type="Lookup.Simple" usage="input" required="false" /-->
     <resources>
       <code path="index.ts" order="1"/>
       <img path="images/skating/s1.png"/> 
